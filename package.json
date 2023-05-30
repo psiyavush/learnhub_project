@@ -1,0 +1,28 @@
+{
+  "name": "learnhub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/main-page.js",
+  "scripts": {
+    "start": "concurrently \"json-server -w db.json\" \"gulp watch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/last-dragon/learnhub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/last-dragon/learnhub/issues"
+  },
+  "homepage": "https://gitlab.com/last-dragon/learnhub#readme",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "concurrently": "^8.0.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.62.0"
+  }
+}

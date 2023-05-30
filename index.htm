@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Главная страница</title>
+        <meta name="description" content="Главная страница проекта learnhub"/>
+        <link rel="stylesheet" href="styles/reset.css" type="text/css"/>
+        <link href="styles/index.css" rel="stylesheet" type="text/css" />
+        <link href="styles/modal.css" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <header class="header">
+                <div class="header-logo">
+                    <a href="#">MY BLOG</a>
+                </div>
+            </header>
+
+            <nav class="main-nav">
+                <form action="" method="post" class="search">
+                    <input type="search" name="MY BLOG" placeholder="Search..." class="input" />
+                    <input type="submit" name="MY BLOG" value="" class="submit" />
+                </form>
+                <a class="nav-item" href="#" id="show-modal">Добавить Статью</a>
+                <a class="nav-item" href="about-us.htm">Об авторе</a>
+            </nav>
+
+            <section class="first-section">
+                <div class="first-section-item-main">
+                    <template id="main-card-template">
+                        <img class="first-section-item-main-img">
+                        <div class="first-section-item-main-card">
+                            <h2 class="first-section-item-main-title"></h2>
+                            <p class="first-section-item-main-text">
+                                
+                            </p>
+                            <div class="link">
+                                <a title="Читать далее" class="link-mainCard">Читать далее</a>
+                            </div>
+                            
+                            <div class="card-end">
+                                <p class="card-end-text">300</p>
+                                <button class="button-card plus">+</button>
+                                <button class="button-card minus">-</button>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <template class="first-section-template">
+                        <div class="first-section-item">
+                            <img class="first-section-item-img">
+                            <div class="first-section-item-card">
+                                <h3 class="first-section-item-title"></h3>
+                                <p class="first-section-item-text">
+                                    
+                                </p>
+    
+                                <div class="link">
+                                    <a title="Читать далее" class="link-firstCard">Читать далее</a>
+                                </div>
+    
+                                <div class="card-end">
+                                    <p class="card-end-text">300</p>
+                                    <button class="button-card plus">+</button>
+                                    <button class="button-card minus">-</button>
+                                </div>
+                            </div>
+                        </div>
+                </template>
+            </section>
+
+            <section class="second-section">
+                <template class="section-section-template">
+                    <div class="second-section-item">
+                        <img class="second-section-item-img">
+                        <div class="second-section-item-card">
+                            <h2 class="second-section-title"></h2>
+                            <p class="second-section-text"> </p>
+    
+                            <div class="link">
+                                <a title="Читать далее" class="link-secondCard">Читать далее</a>
+                            </div>
+    
+                            <div class="card-end">
+                                <p class="card-end-text">300</p>
+                                <button class="button-card plus">+</button>
+                                <button class="button-card minus">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </section>
+           
+
+            <div class="bottom-button">
+                <button class="more">Больше статей</button>
+            </div>
+          
+        </main>
+
+        <div class="right-button">
+            <button class="go-up">Вернуться к началу ↑</button>
+        </div>
+
+        <script src="js/main-page.js" ></script>
+        <script src="js/modal.js"></script>
+        <script>
+            // создаём модальное окно
+            let modal = getModal({
+                title: 'Добавление новой статьи',
+                content: `<form action="" class="catalog__form" id="form" autocomplete="off">
+                <div class="catalog__form-block">
+                    <label for="title">
+                        Название статьи:
+                    </label>
+                    <input required type="text" name="title" id="title">
+                </div>
+                <div class="catalog__form-block">
+                    <label for="text">
+                        Текст статьи:
+                    </label>
+                    <textarea name="details" cols="30" rows="10" required type="text" id="text" ></textarea>
+                </div>
+                <div class="catalog__form-block">
+                    <label for="image">
+                        Изображение:
+                    </label>
+                    <input required type="file" id="image" name="pic">
+                </div>
+                
+                <button type="submit" class="catalog__form__btn" type="button">Добавить</button>
+
+            </form>`
+                
+            });
+            // при клике по кнопке #show-modal
+            document.querySelector('#show-modal').addEventListener('click', function () {
+            // отобразим модальное окно
+            modal.show();
+            });
+       </script>
+       <script src="js/addArticle.js"></script>
+       
+    </body>
+
+</html>

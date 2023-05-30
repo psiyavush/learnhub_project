@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Статья</title>
+        <meta name="description" content="Статья"/>
+        <link rel="stylesheet" href="styles/reset.css" type="text/css"/>
+        <link href="styles/index.css" rel="stylesheet" type="text/css" />
+        <link href="styles/modal.css" rel="stylesheet" type="text/css" />
+        
+    </head>
+    <body>
+        <main>
+            <header class="header">
+                <div class="header-logo">
+                    <a href="index.htm">MY BLOG</a>
+                </div>
+            </header>
+
+            <nav class="main-nav">
+                <form action="" method="post" class="search">
+                    <input type="search" name="MY BLOG" placeholder="Search..." class="input" />
+                    <input type="submit" name="MY BLOG" value="" class="submit" />
+                </form>
+                <a class="nav-item" href="#" id="show-modal">Добавить Статью</a>
+                <a class="nav-item" href="about-us.htm">Об авторе</a>
+            </nav>
+            
+            <section id="article">
+                
+            </section>
+
+
+
+        </main>
+        <script src="js/article.js"></script>
+        <script src="js/modal.js"></script>
+        <script>
+            // создаём модальное окно
+            let modal = getModal({
+                title: 'Добавление новой статьи',
+                content: `<form action="" class="catalog__form" id="form" autocomplete="off">
+                <div class="catalog__form-block">
+                    <label for="title">
+                        Название статьи:
+                    </label>
+                    <input required type="text" name="title" id="title">
+                </div>
+                <div class="catalog__form-block">
+                    <label for="text">
+                        Текст статьи:
+                    </label>
+                    <textarea name="details" cols="30" rows="10" required type="text" id="text" ></textarea>
+                </div>
+                <div class="catalog__form-block">
+                    <label for="image">
+                        Изображение:
+                    </label>
+                    <input required type="file" id="image" name="pic">
+                </div>
+                
+                <button type="submit" class="catalog__form__btn" type="button">Добавить</button>
+
+            </form>`
+                
+            });
+            // при клике по кнопке #show-modal
+            document.querySelector('#show-modal').addEventListener('click', function () {
+            // отобразим модальное окно
+            modal.show();
+            });
+       </script>
+        <script src="js/addArticle.js"></script>
+        
+    </body>
+
+</html>

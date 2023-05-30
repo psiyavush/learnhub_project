@@ -1,0 +1,28 @@
+.catalog__form{
+    &-block{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: top;
+        margin-bottom:40px;
+        & input{
+            width: 400px;
+            height: 40px;
+        }
+        
+    }
+    &__btn {
+        background: #FFFD00;
+        box-shadow: 0px 9px 48px rgba(24, 220, 109, 0.15);
+        border-radius: 43px;
+        border: none;
+        padding: 11px 31px;
+        cursor: pointer;
+    }
+}
+
+textarea[name="details"] { 
+    resize: none;
+    width: 400px;
+    color: #3052d8;
+}

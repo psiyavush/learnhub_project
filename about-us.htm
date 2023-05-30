@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>About Us</title>
+        <meta name="description" content="Страница About Us"/>
+        <link rel="stylesheet" href="styles/reset.css" type="text/css"/>
+        <link href="styles/index.css" rel="stylesheet" type="text/css" />
+        <link href="styles/modal.css" rel="stylesheet" type="text/css" />
+        
+    </head>
+    <body>
+        <main>
+            <header class="header">
+                <div class="header-logo">
+                    <a href="index.htm">MY BLOG</a>
+                </div>
+            </header>
+
+            <nav class="main-nav">
+                <form action="" method="post" class="search">
+                    <input type="search" name="MY BLOG" placeholder="Search..." class="input" />
+                    <input type="submit" name="MY BLOG" value="" class="submit" />
+                </form>
+                <a class="nav-item" href="#" id="show-modal">Добавить Статью</a>
+                <a class="nav-item" href="#">Об авторе</a>
+            </nav>
+
+            <section class="about-top">  
+
+            </section>
+
+            <section class="about-middle">
+                <div class="about-middle-img">
+                    <img src="imgs/about-middle.png" alt="about-middle" width="376px" height="376px" class="about-middle-img-item">
+                </div>
+
+                <div class="about-middle-text">
+                    <h2 class="about-middle-title">Lorem Ipsum</h2>
+                    <p class="about-middle-text-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a nibh ipsum. Quisque eu ultricies ipsum, 
+                       id mattis augue. Ut interdum, lorem et vestibulum posuere, dui ligula iaculis nunc, gravida facilisis turpis 
+                       libero quis nisl. Aliquam quis odio nisi. Phasellus faucibus tortor eget consectetur ornare. Suspendisse eu arcu in 
+                       tortor fermentum faucibus. Curabitur ut viverra nulla. Duis ullamcorper purus vitae nibh facilisis, non consequat 
+                       dolor feugiat. Vestibulum eget mauris vel orci varius pharetra. Duis id fermentum ante. Cras sit amet libero quis 
+                       erat auctor viverra volutpat id velit. Praesent sed ante tempus, rutrum velit quis, gravida 
+                    </p>
+                    <ul class="about-middle-text-list">
+                        <li>Элемент списка 1</li>
+                        <li>Элемент списка 2</li>
+                        <li>Элемент списка 3</li>
+                    </ul>
+                </div>
+         
+            </section>
+
+            <section class="about-bottom">
+                <h2 class="about-bottom-title">Lorem Ipsum</h2>
+                <div class="about-bottom-list">
+                    <div class="about-bottom-item">
+                        <p>
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a nibh ipsum. Quisque eu ultricies ipsum, 
+                           id mattis augue. Ut interdum, lorem et vestibulum posuere, dui ligula iaculis nunc, gravida facilisis turpis libero quis nisl. 
+                           Aliquam quis odio nisi. Phasellus faucibus tortor eget consectetur ornare. Suspendisse eu arcu in tortor fermentum faucibus. 
+                           Curabitur ut viverra nulla. Duis ullamcorper purus vitae nibh facilisis, non consequat dolor feugiat. Vestibulum eget mauris 
+                           vel orci varius pharetra. Duis id fermentum ante. 
+                        </p>
+                    </div>
+
+                    <div class="about-bottom-item">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a nibh ipsum. Quisque eu ultricies ipsum, id mattis augue. Ut interdum, 
+                            lorem et vestibulum posuere, dui ligula iaculis nunc, gravida facilisis turpis libero quis nisl. Aliquam quis odio nisi. Phasellus faucibus 
+                            tortor eget consectetur ornare. Suspendisse eu arcu in tortor fermentum faucibus. Curabitur ut viverra nulla. Duis ullamcorper purus vitae nibh 
+                            facilisis, non consequat dolor feugiat. Vestibulum eget mauris vel orci varius pharetra. Duis id fermentum ante. 
+                        </p>
+                    </div>
+                    
+                    <div class="about-bottom-item">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a nibh ipsum. Quisque eu ultricies ipsum, id mattis augue. Ut interdum, lorem et vestibulum 
+                            posuere, dui ligula iaculis nunc, gravida facilisis turpis libero quis nisl. Aliquam quis odio nisi. Phasellus faucibus tortor eget consectetur ornare. 
+                            Suspendisse eu arcu in tortor fermentum faucibus. Curabitur ut viverra nulla. Duis ullamcorper purus vitae nibh facilisis, non consequat dolor feugiat. 
+                            Vestibulum eget mauris vel orci varius pharetra. Duis id fermentum ante. 
+                        </p>
+                    </div>
+                </div>
+                     
+            </section>
+        </main>
+        <script src="js/modal.js"></script>
+        <script>
+            // создаём модальное окно
+            let modal = getModal({
+                title: 'Добавление новой статьи',
+                content: `<form action="" class="catalog__form" id="form" autocomplete="off">
+                <div class="catalog__form-block">
+                    <label for="title">
+                        Название статьи:
+                    </label>
+                    <input required type="text" name="title" id="title">
+                </div>
+                <div class="catalog__form-block">
+                    <label for="text">
+                        Текст статьи:
+                    </label>
+                    <textarea name="details" cols="30" rows="10" required type="text" id="text" ></textarea>
+                </div>
+                <div class="catalog__form-block">
+                    <label for="image">
+                        Изображение:
+                    </label>
+                    <input required type="file" id="image" name="pic">
+                </div>
+                
+                <button type="submit" class="catalog__form__btn" type="button">Добавить</button>
+
+            </form>`
+                
+            });
+            // при клике по кнопке #show-modal
+            document.querySelector('#show-modal').addEventListener('click', function () {
+            // отобразим модальное окно
+            modal.show();
+            });
+       </script>
+        <script src="js/addArticle.js"></script>
+    </body>
+
+</html>
