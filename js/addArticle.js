@@ -33,11 +33,15 @@ const handleForm = async (event) => {
   event.preventDefault();
 
   const formData = new FormData(formElement)
+  // взятие из хранилища (демонстрационная версия)
+  articles = JSON.parse(localStorage.getItem('cards-info'))
 
 	let data = {
     'title': formData.get('title'),
     'content': formData.get('details'),
     'likes': 0,
+    // id (демонстрационная версия)
+    'id': articles.length + 1
   }
 
 	Object.entries(myFiles).map(item => {
@@ -45,16 +49,21 @@ const handleForm = async (event) => {
 	  data[key] = file
   })
 
-  fetch('https://learnhub-project-cb2ba-default-rtdb.europe-west1.firebasedatabase.app/article.json', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': "application/json; charset=UTF-8"
-        },
-        body: JSON.stringify(data)
-    }).then(()=>{
-        location.reload()
-    })
+  // Добавление статьи (демонстрационная версия)
+  articles.push(data)
+  localStorage.setItem("cards-info", JSON.stringify(articles));
+  location.reload()
+
+  // fetch('https://learnhub-project-cb2ba-default-rtdb.europe-west1.firebasedatabase.app/article.json', {
+  //       method: 'POST',
+  //       headers: {
+  //           'Accept': 'application/json',
+  //           'Content-Type': "application/json; charset=UTF-8"
+  //       },
+  //       body: JSON.stringify(data)
+  //   }).then(()=>{
+  //       location.reload()
+  //   })
 } 
 
 formElement.addEventListener('submit', handleForm)
